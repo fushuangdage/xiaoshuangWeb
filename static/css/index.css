@@ -2,5 +2,6 @@
     width: auto;
     height: 200px;
     background: #b8fffa;
-    align-content: center;
+    text-align: center;
+    top: 50%;
 }

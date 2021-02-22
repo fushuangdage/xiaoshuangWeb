@@ -8,8 +8,8 @@ import (
 
 func main() {
 
-	http.Handle("/js/", http.StripPrefix("/js/", http.FileServer(http.Dir("./js"))))
-	http.Handle("/css/", http.StripPrefix("/css/", http.FileServer(http.Dir("./css"))))
+	//http.Handle("/js/", http.StripPrefix("/js/", http.FileServer(http.Dir("./js"))))
+	http.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("./static/"))))
 
 	http.HandleFunc("/", myWeb)
 
@@ -41,7 +41,7 @@ func myWeb(w http.ResponseWriter, r *http.Request) {
 
 	//t := template.New("index")
 	//t.Parse("<div id='templateTextDiv'>Hi,{{.name}},{{.someStr}}</div>")
-	t, _ := template.ParseFiles("./template/index.html")
+	t, _ := template.ParseFiles("./static/index.html")
 	data := map[string]string{
 		"name": "aaa",
 		"say":  "ღ( ´･ᴗ･` )比心",
